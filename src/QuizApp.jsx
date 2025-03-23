@@ -741,14 +741,14 @@ const QuizApp = () => {
       dir="rtl"
     >
       <div className="bg-white bg-opacity-90 rounded-lg shadow-lg p-6 mb-8">
-        <div className="flex flex-row-reverse justify-between items-center">
+        <div className="flex flex-col gap-4 md:gap-0 md:flex-row-reverse justify-between items-center">
           <h1 className="text-3xl font-bold">ئاستەکانی گوناح بوون</h1>
           <div className="text-lg font-medium">بەخێربێیت {userName}</div>
         </div>
         <div className="mt-4 text-sm text-gray-600">
           <p>کۆی هەوڵەکان: {stats.totalAttempts}</p>
-          <p>هەڵە کراوەکان: {stats.failedAttempts}</p>
-          <p>ڕێژەی سەرکەوتن: {stats.totalAttempts > 0 ? Math.round(((stats.totalAttempts - stats.failedAttempts) / stats.totalAttempts) * 100) : 0}%</p>
+          <p>کۆی وەلامە هەڵەکان: {stats.failedAttempts}</p>
+          <p>ڕێژەی وەلامی ڕاست: {stats.totalAttempts > 0 ? Math.round(((stats.totalAttempts - stats.failedAttempts) / stats.totalAttempts) * 100) : 0}%</p>
         </div>
       </div>
 
@@ -922,7 +922,7 @@ const QuizApp = () => {
             </div>
           )}
 
-          <div className="space-x-4">
+          <div className="space-x-4 flex justify-center items-center flex-col md:flex-row gap-2 md:gap-0">
             <button
               onClick={() => startLevel(currentLevel)}
               className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 ml-4"
@@ -944,8 +944,8 @@ const QuizApp = () => {
   const renderTextLevels = () => (
     <div className="container mx-auto px-4 py-8 min-h-screen" dir="rtl">
       <div className="bg-white bg-opacity-90 rounded-lg shadow-lg p-6 mb-8">
-        <div className="flex flex-row-reverse justify-between items-center">
-          <h1 className="text-3xl font-bold">ئاستەکانی تاقیکردنەوەی گوناح بوون</h1>
+        <div className="flex flex-col gap-4 md:gap-0 md:flex-row-reverse justify-between items-center">
+          <h1 className="text-2xl md:text-3xl font-bold">ئاستەکانی تاقیکردنەوەی گوناح بوون</h1>
           <div className="text-lg font-medium">بەخێربێیت {userName}</div>
         </div>
         <div className="mt-4 text-sm text-gray-600">
@@ -1057,22 +1057,16 @@ const QuizApp = () => {
       <div className="container mx-auto px-4 py-8 min-h-screen" dir="rtl">
         <div className="bg-white bg-opacity-90 rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
               وەڵام: {currentQuestion.answer}
             </h2>
           </div>
-          <div className="flex justify-center space-x-4">
+          <div className="flex flex-col gap-2 md:gap-0 md:flex-row justify-center space-x-4">
             <button
-              onClick={continueTextQuiz}
+              onClick={() => { continueTextQuiz(); setCurrentScreen(quizMode === 'multiple' ? 'levels' : 'text-levels'); }}
               className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 ml-4"
             >
               بەردەوام بە
-            </button>
-            <button
-              onClick={() => setCurrentScreen(quizMode === 'multiple' ? 'levels' : 'text-levels')}
-              className="px-6 py-2 bg-gray-200 text-gray-800 rounded-lg font-medium hover:bg-gray-300"
-            >
-              گەڕانەوە بۆ ئاستەکان
             </button>
           </div>
         </div>
