@@ -356,7 +356,7 @@ const generateLevels = () => {
       correctAnswer: "بە تەکسی",
       winnerMessage: "پاس نەمابوو🐸",
       wrongAnswerMessages: {
-        "بە پاس": "پاشای گەناح بوون خۆتی",
+        "بە پاس": "پاشای گوناح بوون خۆتی",
         "بە ئیسراحەت": "سەرخەوێکیش بشکێنە ئینجا وەرەوە🐸",
         "بە پێ": "زەمیرت بێ کابرا هیلاکە"
       }
@@ -1008,7 +1008,7 @@ const QuizApp = () => {
     const currentQuestion = textQuestions[currentTextQuestion];
 
     return (
-      <div className="container mx-auto px-4 py-8 min-h-screen" dir="rtl">
+      <div className="container mx-auto px-4 py-8 pt-20 min-h-screen" dir="rtl">
         <div className="bg-white bg-opacity-90 rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
           <div className="mb-8">
             <div className="flex justify-between items-center mb-4">
