@@ -492,6 +492,14 @@ const generateTextQuestions = () => {
       answer: "چونکە هەموو ڕۆژێک بەفرە",
       hint: "بەفر"
     },
+    {
+      id: 9,
+      title: "ئاست 9",
+      image: "peshawa.webp",
+      question: "ئەگەر مەیمونێک حەزی بە مۆز بێت چی ئەیەینێ؟",
+      answer: "مەیمونێکی تر🐒",
+      hint: "نازانم لە پەیامنێرەکە پرسە🐸"
+    },
   ];
 };
 
@@ -516,6 +524,11 @@ const QuizApp = () => {
     failedQuestions: {}
   });
   const [completedQuestions, setCompletedQuestions] = useState([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   const levels = quizLevels;
 
   useEffect(() => {
@@ -1083,8 +1096,8 @@ const QuizApp = () => {
             </div>
 
             <div className="p-10">
-              <h1 className="text-4xl font-bold text-center text-white mb-8 tracking-wider">دەربارەی یارییەکە</h1>
-              <div dir='rtl' className="space-y-6 text-lg">
+              <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-8 tracking-wider">دەربارەی یارییەکە</h1>
+              <div dir='rtl' className="space-y-6 text-base">
                 <p className="text-white/90">
                   پێشەکی ئەم یاریە تەنها بۆ خۆشیەو پێشکەشە بە برای خۆشەویستی خۆم کاک پێشەوا
                 </p>
@@ -1135,8 +1148,28 @@ const QuizApp = () => {
     <nav className="fixed top-0 w-full bg-black bg-opacity-90 text-white z-20 py-4" dir="rtl">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
+          {/* Logo */}
           <div className="text-xl font-semibold">یاری گوناح بوون</div>
-          <div className="flex gap-4 items-center">
+
+          {/* Hamburger menu button - only visible on small screens */}
+          <button
+            className="lg:hidden text-white focus:outline-none"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            )}
+          </button>
+
+          {/* Desktop navigation - hidden on small screens */}
+          <div className="hidden lg:flex gap-4 items-center">
             <button
               onClick={() => setCurrentScreen('welcome')}
               className="hover:text-blue-400 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10"
@@ -1172,7 +1205,9 @@ const QuizApp = () => {
               دەستپێکردنەوە لە سەرەتاوە
             </button>
           </div>
-          <div className="flex justify-center gap-6">
+
+          {/* Social icons - hidden on small screens */}
+          <div className="hidden lg:flex justify-center gap-6">
             <a href="https://www.facebook.com/zhyaromer999/" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">
               <i className="fab fa-facebook text-2xl"></i>
             </a>
@@ -1181,6 +1216,71 @@ const QuizApp = () => {
             </a>
           </div>
         </div>
+
+        {/* Mobile menu - only visible when menu is open */}
+        {isMenuOpen && (
+          <div className="lg:hidden mt-4 flex flex-col gap-2">
+            <button
+              onClick={() => {
+                setCurrentScreen('welcome');
+                setIsMenuOpen(false);
+              }}
+              className="hover:text-blue-400 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 text-right"
+            >
+              سەرەتا
+            </button>
+            <button
+              onClick={() => {
+                setCurrentScreen('mode-select');
+                setIsMenuOpen(false);
+              }}
+              className="hover:text-blue-400 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 text-right"
+            >
+              جۆری یاری
+            </button>
+            {quizMode === 'multiple' && (
+              <button
+                onClick={() => {
+                  setCurrentScreen('levels');
+                  setIsMenuOpen(false);
+                }}
+                className="hover:text-blue-400 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 text-right"
+              >
+                ئاستەکان
+              </button>
+            )}
+            {quizMode === 'text' && (
+              <button
+                onClick={() => {
+                  setCurrentScreen('text-levels');
+                  setIsMenuOpen(false);
+                }}
+                className="hover:text-blue-400 transition-colors px-4 py-2 rounded-lg hover:bg-white hover:bg-opacity-10 text-right"
+              >
+                ئاستەکان
+              </button>
+            )}
+            <button
+              onClick={() => {
+                resetProgress();
+                setIsMenuOpen(false);
+              }}
+              className="bg-red-500 hover:bg-red-600 transition-colors px-4 py-2 rounded-lg text-white text-right"
+            >
+              دەستپێکردنەوە لە سەرەتاوە
+            </button>
+
+            {/* Social icons in mobile menu */}
+            <div className="flex gap-6 mt-4 pr-4">
+              <a href="https://www.facebook.com/zhyaromer999/" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">
+                <i className="fab fa-facebook text-2xl"></i>
+              </a>
+              <a href="https://github.com/Zhyaromer" target="_blank" rel="noreferrer" className="hover:text-gray-400 transition-colors">
+                <i className="fab fa-github text-2xl"></i>
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
