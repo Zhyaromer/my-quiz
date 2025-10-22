@@ -244,21 +244,6 @@ const generateLevels = () => {
     {
       id: 18,
       title: "ئاست 18",
-      image: "peshawa3.png",
-      quizimg: "https://th.bing.com/th/id/OIP.uI6YS-gu6d4mOC5RG1LqKQHaE8?rs=1&pid=ImgDetMain",
-      question: "حەمە قتو بە چی مرد؟",
-      options: ["قوپا", "کون بوو", "ئێکسپایەر بوو", "هەلیان چری"],
-      correctAnswer: "هەلیان چری",
-      winnerMessage: "قتویەکی پیاو بوو😭😢",
-      wrongAnswerMessages: {
-        "ئێکسپایەر بوو": "ئەگەر ئێکسپایەر بێت بۆ هەلی ئەپچرن؟🐸",
-        "کون بوو": "بڕاستی نداخۆ",
-        "قوپا": "گوناح گیان"
-      }
-    },
-    {
-      id: 19,
-      title: "ئاست 19",
       image: "peshawa4.png",
       quizimg: "https://www.bus-planet.com/bus/pictures/Bahrein/CK-Bahrein-0114.jpg",
       question: "پاسێکی ٢١ نەفەری لە سلێمانیەوە بەڕێکەوت بۆ کەرکووک چەند نەفەری تیایە؟",
@@ -272,8 +257,8 @@ const generateLevels = () => {
       }
     },
     {
-      id: 20,
-      title: "ئاست 20",
+      id: 19,
+      title: "ئاست 19",
       image: "peshawa5.webp",
       quizimg: "https://th.bing.com/th/id/R.8dafa255dacb74bb597e405ce92d35a2?rik=Gr%2fzetEq3BCGDw&pid=ImgRaw&r=0",
       question: "کابرایەک سەلەجەیەک ئەکرێت بۆ ئیش ناکا؟",
@@ -287,8 +272,8 @@ const generateLevels = () => {
       }
     },
     {
-      id: 21,
-      title: "ئاست 21",
+      id: 20,
+      title: "ئاست 20",
       image: "peshawa6.webp",
       quizimg: "https://th.bing.com/th/id/R.3a82af2943ee3a9a8e248bba160aaf8c?rik=oQ8dGrf%2bx7N5iw&riu=http%3a%2f%2fwww.botswana.co.za%2fimages%2felephant-jeremy-jowell-1280x881.jpg&ehk=RFcq9%2f%2bFIjuGDXgtvl%2brX6EdtA34ZUwziP%2fkejZI4gI%3d&risl=&pid=ImgRaw&r=0",
       question: "فیلێک بچێتە دارێک  چی ئەبێت؟",
@@ -302,8 +287,8 @@ const generateLevels = () => {
       }
     },
     {
-      id: 22,
-      title: "ئاست 22",
+      id: 21,
+      title: "ئاست 21",
       image: "peshawa8.jpg",
       quizimg: "https://neurosciencenews.com/files/2023/10/mouse-genetics-parenting-neuroscience.jpg",
       question: "مشک دوای سێ سال ئەبێتە چی؟",
@@ -317,8 +302,8 @@ const generateLevels = () => {
       }
     },
     {
-      id: 23,
-      title: "ئاست 23",
+      id: 22,
+      title: "ئاست 22",
       image: "peshawa.webp",
       quizimg: "quizbald.jpg",
       question: "پیاوێکی کەچەڵ ئەچێتە سەرتاشخانە بۆچی؟",
@@ -332,8 +317,8 @@ const generateLevels = () => {
       }
     },
     {
-      id: 24,
-      title: "ئاست 24",
+      id: 23,
+      title: "ئاست 23",
       image: "peshawa1.jpg",
       video: "yt1z.net - Green Screen Spinning Cat Meme OIIAIOIIIAI Meme (1080p).mp4",
       isVideo: true,
@@ -348,8 +333,8 @@ const generateLevels = () => {
       }
     },
     {
-      id: 25,
-      title: "ئاست 25",
+      id: 24,
+      title: "ئاست 24",
       image: "peshawa2.png",
       question: "کابرایەک بە پاس ئەچێتە بازار بە چی یەتەوە؟",
       options: ["بە تەکسی", "بە پاس", "بە پێ", "بە ئیسراحەت"],
@@ -362,8 +347,8 @@ const generateLevels = () => {
       }
     },
     {
-      id: 26,
-      title: "ئاست 26",
+      id: 25,
+      title: "ئاست 25",
       image: "peshawa5.webp",
       quizimg: "https://th.bing.com/th/id/OIP.dlmU0lfT5j0kz2IQZC0idwHaEM?rs=1&pid=ImgDetMain",
       question: "خورما لە کوێ زۆرە؟",
@@ -377,8 +362,8 @@ const generateLevels = () => {
       }
     },
     {
-      id: 27,
-      title: "ئاست 27",
+      id: 26,
+      title: "ئاست 26",
       image: "peshawa.webp",
       quizimg: "https://i.ytimg.com/vi/ah_VpRDvLAw/maxresdefault.jpg",
       question: "کابرایەک ئەچێتە مەتعەم بۆ داوای جبس ئەکات؟",
@@ -392,8 +377,8 @@ const generateLevels = () => {
       }
     },
     {
-      id: 28,
-      title: "ئاست 28",
+      id: 27,
+      title: "ئاست 27",
       image: "peshawa1.jpg",
       quizimg: "https://thumbs.dreamstime.com/z/stack-money-isolated-currency-money-stack-cash-banknotes-dollars-finance-111553616.jpg",
       question: "کابرایەک پارەی پێ نیە بۆ؟",
@@ -406,8 +391,8 @@ const generateLevels = () => {
       }
     },
     {
-      id: 29,
-      title: "ئاست 29",
+      id: 28,
+      title: "ئاست 28",
       image: "peshawa8.jpg",
       quizimg: "https://thumbs.dreamstime.com/b/ants-16283656.jpg",
       question: "مەجموعە مێلورەیەک ئەڕۆن بە ڕێگایە لە پر دانایەکیان ئەگەڕێتەوە بۆچی؟",
@@ -591,7 +576,7 @@ const QuizApp = () => {
     const currentLevelData = levels.find(level => level.id === currentLevel);
     const isCorrect = userAnswer === currentLevelData.correctAnswer;
 
-    if (currentLevel === 25) {
+    if (currentLevel === 24) {
       setTimeout(() => {
         setShowJumpScare(true);
         const audio = new Audio('fuzzy-jumpscare-80560.mp3');
